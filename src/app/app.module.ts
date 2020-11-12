@@ -1,18 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AppComponent } from "./app.component";
+import { GridAdvancedFilteringSampleComponent } from "./grid/grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
+import { IgxGridModule } from "igniteui-angular";
+import { IgxPreventDocumentScrollModule } from "./directives/prevent-scroll.directive";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+
 
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
-    AppComponent
+    AppComponent,
+		GridAdvancedFilteringSampleComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    FormsModule,
+		IgxPreventDocumentScrollModule,
+		IgxGridModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [],
+  schemas: []
 })
-export class AppModule { }
+export class AppModule {}
